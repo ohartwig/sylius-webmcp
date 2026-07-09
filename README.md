@@ -7,3 +7,5 @@ WebMCP for the Sylius storefront — MCP tools embedded in storefront web pages 
 ---
 
 Teil der **AI Ready Plattform** (Content-Commerce: Sylius × TYPO3). Status: Basis-Skeleton.
+
+<!-- release: enable initial release -->
