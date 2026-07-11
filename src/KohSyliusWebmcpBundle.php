@@ -12,6 +12,14 @@ use Symfony\Component\Yaml\Yaml;
 
 final class KohSyliusWebmcpBundle extends AbstractBundle
 {
+    // The bundle's Resources/ (views + public assets) live at the package root,
+    // not under src/. Point getPath() there so @KohSyliusWebmcp templates resolve
+    // and assets:install publishes Resources/public to public/bundles/kohsyliuswebmcp.
+    public function getPath(): string
+    {
+        return \dirname(__DIR__);
+    }
+
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         $container->import(\dirname(__DIR__) . '/config/services.php');
