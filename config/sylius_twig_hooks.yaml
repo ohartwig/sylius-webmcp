@@ -7,7 +7,7 @@
 # is the documented JS hook; adjust if your theme overrides it.
 sylius_twig_hooks:
     hooks:
-        'sylius_shop.base.javascripts':
+        'sylius_shop.base#javascripts':
             webmcp:
                 template: '@KohSyliusWebmcp/_webmcp_script.html.twig'
                 priority: -100
