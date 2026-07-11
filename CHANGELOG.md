@@ -1,3 +1,9 @@
+## [1.0.1](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.0.0...v1.0.1) (2026-07-11)
+
+### :bug: Fixes
+
+* actually inject the WebMCP script into the storefront ([87bb032](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/87bb0320f6ee70df307255d92fa155c48395cc3b))
+
 ## 1.0.0 (2026-07-09)
 
 ### :sparkles: Features
