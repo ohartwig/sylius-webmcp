@@ -1,3 +1,13 @@
+## [1.1.0](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.0.2...v1.1.0) (2026-07-28)
+
+### :sparkles: Features
+
+* add REUSE-compliant licensing metadata and contributor docs ([01b3c04](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/01b3c04552dba84ccf9f7f6dc1173eb816d434c6))
+
+### :repeat: Chores
+
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.25.0 ([d29eb49](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/d29eb49ae7722384a247ba856ba5449aa7e26e50))
+
 ## [1.0.2](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.0.1...v1.0.2) (2026-07-28)
 
 ### :bug: Fixes
