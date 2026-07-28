@@ -3,6 +3,16 @@
     "description": "WebMCP for the Sylius storefront \u2014 MCP tools embedded in storefront web pages.",
     "type": "sylius-bundle",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Kai Ole Hartwig",
+            "email": "mail@ole-hartwig.eu"
+        }
+    ],
+    "support": {
+        "issues": "https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/-/issues",
+        "source": "https://github.com/ole-hartwig/sylius-webmcp"
+    },
     "require": {
         "php": ">=8.2",
         "sylius/sylius": "^2.0"
