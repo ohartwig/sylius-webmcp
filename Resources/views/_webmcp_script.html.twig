@@ -1,8 +1,10 @@
-{# koh/sylius-webmcp — include on storefront pages to expose WebMCP tools to
-   in-browser agents. Wire via a Sylius storefront template event/override, e.g.
-   sylius_shop.layout.head. Requires HTTPS + a "tools" permissions-policy. #}
-<meta name="sylius-shop-api" content="{{ sylius_shop_api_base|default('/api/v2/shop') }}">
-{% if sylius_cart_token is defined and sylius_cart_token %}
-<meta name="sylius-cart-token" content="{{ sylius_cart_token }}">
-{% endif %}
-<script type="module" src="{{ asset('bundles/kohsyliuswebmcp/webmcp.js') }}"></script>
+{#
+    SPDX-FileCopyrightText: 2026 Kai Ole Hartwig
+    SPDX-License-Identifier: MIT
+
+    Publishes the agent API base as a meta tag and loads the WebMCP
+    registration script. The script reads the meta tag rather than guessing a
+    path, so moving the API is a configuration change.
+#}
+<meta name="koh-agent-api" content="{{ koh_webmcp_api_base }}">
+<script src="{{ asset('bundles/kohsyliuswebmcp/webmcp.js') }}" defer></script>

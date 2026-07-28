@@ -1,36 +1,55 @@
 <?php
 
+// SPDX-FileCopyrightText: 2026 Kai Ole Hartwig
+// SPDX-License-Identifier: MIT
+
 declare(strict_types=1);
 
 namespace Koh\SyliusWebmcp;
 
-use Symfony\Component\Config\FileLocator;
+use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
-use Symfony\Component\Yaml\Yaml;
 
+/**
+ * Exposes shop actions to in-browser agents through the WebMCP API.
+ */
 final class KohSyliusWebmcpBundle extends AbstractBundle
 {
-    // The bundle's Resources/ (views + public assets) live at the package root,
-    // not under src/. Point getPath() there so @KohSyliusWebmcp templates resolve
-    // and assets:install publishes Resources/public to public/bundles/kohsyliuswebmcp.
+    protected string $extensionAlias = 'koh_webmcp';
+
+    /** Resources/ and config/ sit at the package root, not under src/. */
     public function getPath(): string
     {
         return \dirname(__DIR__);
     }
 
-    public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
+    public function configure(DefinitionConfigurator $definition): void
     {
-        $container->import(\dirname(__DIR__) . '/config/services.php');
+        $definition->rootNode()
+            ->children()
+                ->scalarNode('api_base')
+                    ->defaultValue('/api/agent')
+                    ->info('Read-only agent API the tools call. Must match a route the shop serves — koh/sylius-acp provides one.')
+                ->end()
+            ->end();
     }
 
-    public function prependExtension(ContainerConfigurator $container, ContainerBuilder $builder): void
+    /**
+     * @param array<string, mixed> $config
+     */
+    public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
-        // Register the WebMCP storefront hook without the app having to import it.
-        $hooks = Yaml::parseFile(\dirname(__DIR__) . '/config/sylius_twig_hooks.yaml');
-        if (isset($hooks['sylius_twig_hooks'])) {
-            $builder->prependExtensionConfig('sylius_twig_hooks', $hooks['sylius_twig_hooks']);
-        }
+        $apiBase = (string) ($config['api_base'] ?? '/api/agent');
+
+        $builder->setParameter('koh_webmcp.api_base', $apiBase);
+
+        // Exposed to the template so the script never has to guess a path.
+        $builder->prependExtensionConfig('twig', [
+            'globals' => ['koh_webmcp_api_base' => $apiBase],
+        ]);
+
+        $container->import('../config/services.php');
     }
 }

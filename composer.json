@@ -2,9 +2,9 @@
     "name": "koh/sylius-webmcp",
     "description": "WebMCP for the Sylius storefront \u2014 MCP tools embedded in storefront web pages.",
     "type": "sylius-bundle",
-    "license": "proprietary",
+    "license": "MIT",
     "require": {
-        "php": "^8.5",
+        "php": ">=8.2",
         "sylius/sylius": "^2.0"
     },
     "require-dev": {
@@ -25,5 +25,14 @@
         "branch-alias": {
             "dev-main": "0.1-dev"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://git.ole-hartwig.eu/api/v4/group/1091/-/packages/composer/packages.json",
+            "only": [
+                "koh/*"
+            ]
+        }
+    ]
 }

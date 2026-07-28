@@ -1,48 +1,83 @@
-// koh/sylius-webmcp — registers Sylius storefront actions as WebMCP tools so an
-// in-browser AI agent can act on the shop. WebMCP is a W3C draft (pre-1.0); the
-// API is exposed as `navigator.modelContext` (Chrome origin trial) with a
-// `document.modelContext` variant in the spec text. Requires a secure context
-// (HTTPS) and the "tools" permissions-policy (default ['self']).
+// SPDX-FileCopyrightText: 2026 Kai Ole Hartwig
+// SPDX-License-Identifier: MIT
+//
+// Registers this shop's read-only actions as WebMCP tools, so an in-browser
+// agent can search the catalogue on the page the shopper is already looking at.
+//
+// Read-only on purpose. An earlier version registered add_to_cart against the
+// Sylius Shop API; that API is commonly disabled outside development, so the
+// tool was advertised and never worked. Beyond that, a page-embedded agent
+// mutating a cart is a decision for the shop to make deliberately — not
+// something a discovery bundle should switch on by installing it.
+//
+// The endpoint comes from a meta tag rendered server-side, so this file never
+// guesses a path.
 (function () {
   'use strict';
 
-  var ctx = (typeof navigator !== 'undefined' && navigator.modelContext)
-    || (typeof document !== 'undefined' && document.modelContext);
+  // The 2026 draft moved the API to document.modelContext; Chrome's origin
+  // trial still exposes navigator.modelContext.
+  var ctx =
+    (typeof document !== 'undefined' && document.modelContext) ||
+    (typeof navigator !== 'undefined' && navigator.modelContext);
+
   if (!ctx || typeof ctx.registerTool !== 'function') {
-    return; // WebMCP not available in this browser.
+    return; // WebMCP unavailable — nothing to do, and nothing to log.
   }
 
-  ctx.registerTool({
-    name: 'add_to_cart',
-    description: 'Add a product variant to the current shopping cart.',
-    inputSchema: {
-      type: 'object',
-      properties: {
-        productVariant: { type: 'string', description: 'Sylius product variant IRI or code.' },
-        quantity: { type: 'integer', minimum: 1, default: 1 }
+  var meta = document.querySelector('meta[name="koh-agent-api"]');
+  var base = meta && meta.content ? meta.content.replace(/\/$/, '') : null;
+  if (!base) {
+    return; // No agent API on this shop.
+  }
+
+  var controller = new AbortController();
+
+  ctx.registerTool(
+    {
+      name: 'search_products',
+      description:
+        'Search this shop catalogue. Returns SKU-level items with price, currency and availability.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          query: { type: 'string', description: 'Search phrase.' },
+          limit: { type: 'integer', minimum: 1, maximum: 50, default: 10 }
+        },
+        required: ['query']
       },
-      required: ['productVariant']
-    },
-    annotations: { readOnlyHint: false },
-    execute: async function (input) {
-      // Sylius Shop API: carts are orders in "cart" state, keyed by tokenValue.
-      // The storefront exposes the active cart token via a meta tag it renders.
-      var token = (document.querySelector('meta[name="sylius-cart-token"]') || {}).content;
-      var base = (document.querySelector('meta[name="sylius-shop-api"]') || {}).content || '/api/v2/shop';
-      if (!token) {
-        var created = await fetch(base + '/orders', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/ld+json', 'Accept': 'application/ld+json' },
-          body: JSON.stringify({ localeCode: document.documentElement.lang || 'en_US' })
-        }).then(function (r) { return r.json(); });
-        token = created.tokenValue;
+      annotations: {
+        readOnlyHint: true,
+        // The catalogue carries editor-authored text. An agent should treat it
+        // as data, not as instructions.
+        untrustedContentHint: true
+      },
+      execute: async function (input) {
+        var url =
+          base +
+          '/feed?limit=' +
+          encodeURIComponent(String(input.limit || 10)) +
+          '&q=' +
+          encodeURIComponent(input.query);
+
+        var response = await fetch(url, {
+          headers: { Accept: 'application/json' },
+          credentials: 'omit'
+        });
+
+        if (!response.ok) {
+          return { error: 'Search failed with status ' + response.status };
+        }
+
+        return await response.json();
       }
-      var res = await fetch(base + '/orders/' + encodeURIComponent(token) + '/items', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/ld+json', 'Accept': 'application/ld+json' },
-        body: JSON.stringify({ productVariant: input.productVariant, quantity: input.quantity || 1 })
-      }).then(function (r) { return r.json(); });
-      return { ok: true, cart: token, result: res };
-    }
+    },
+    { signal: controller.signal }
+  );
+
+  // Withdraw the tools when the page goes away, so an agent is not left holding
+  // a handle to a document that no longer exists.
+  window.addEventListener('pagehide', function () {
+    controller.abort();
   });
 })();
