@@ -1,3 +1,17 @@
+## [1.1.2](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.1...v1.1.2) (2026-08-01)
+
+### :bug: Fixes
+
+* **phpstan:** resolve both level-8 findings without suppressions ([7cdeeb0](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/7cdeeb0fb6bac2a88e2d66e285cb67c889d71d96))
+
+### :zap: Refactor
+
+* **phpstan:** use the shared level-8 standard ([a23cf51](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/a23cf5132df8dbf13276ada8888e361ef570b385))
+
+### :repeat: Chores
+
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.32.2 ([9af8cef](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/9af8cef036178a84d35c56bd679e7e0d9919ffbe))
+
 ## [1.1.1](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.0...v1.1.1) (2026-08-01)
 
 ### :bug: Fixes
