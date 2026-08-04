@@ -1,3 +1,23 @@
+## [1.1.3](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.2...v1.1.3) (2026-08-04)
+
+### :repeat: Chores
+
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.32.4 ([4bc9200](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/4bc92006c9a5af0c76b292118aa09a5f11c4ab69))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.32.5 ([6928eec](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/6928eecdb6b83391aadc7026f4b322f125579a47))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.32.6 ([2e2825f](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/2e2825ff5a78a798a792e562cc8d5cce5df46b2a))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.32.7 ([b912fe2](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/b912fe2e4c26b7ad56af54cb2d325d6121fbefd2))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.33.0 ([b6bac14](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/b6bac1401bf4041f1df4ccbc0837ecdcd9d0a4a3))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.34.0 ([e7ef28c](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/e7ef28c8bfe0797608ae160399c12bb276a8cb39))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.34.1 ([1a64367](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/1a643675f0225e592f2ab89349ef607cbaba2de1))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.34.2 ([c19faa9](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/c19faa98721ea2627dc13f4051471555a5c0dde0))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.35.0 ([1f6520a](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/1f6520a65a5958a469b4a30c43bf35d4b40db910))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.35.1 ([68d5cfe](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/68d5cfe65d3ea396a5d9b702724237cb8809616f))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.35.2 ([713bd40](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/713bd407b1bb4e97da518d05b321b3cf5e35318c))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.36.0 ([17d277b](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/17d277b5ca2f037fea0fb8c0ba81ecfe26d1ab36))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.36.4 ([dba4e92](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/dba4e9286da708ce17a039cdcd154de0ecfa1d47))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.36.5 ([8338d0d](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/8338d0d6c0a08268184716f07dfc05d18e4da7bf))
+* **deps:** update dependency phpunit/phpunit to v13 ([c174763](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/c1747639cf233039cd709efffbbab2f4999e9a53))
+
 ## [1.1.2](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.1...v1.1.2) (2026-08-01)
 
 ### :bug: Fixes
