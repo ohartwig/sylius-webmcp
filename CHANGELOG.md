@@ -1,3 +1,14 @@
+## [1.1.5](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.4...v1.1.5) (2026-08-12)
+
+### :bug: Fixes
+
+* **deps:** update dependency php to >=8.5.9 ([c6b95ce](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/c6b95ce973aaa5b4aff14cb7036a879bea3555a5))
+
+### :repeat: Chores
+
+* **deps:** update dependency phpstan/phpstan to ^2.2.8 ([87cbb11](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/87cbb111eddda065b1d0cfcc307a6185393d886a))
+* **deps:** update dependency phpunit/phpunit to ^13.3.0 ([22e6dc0](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/22e6dc0685e2a46ae61b291eff33b9ec34eb3243))
+
 ## [1.1.4](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.3...v1.1.4) (2026-08-12)
 
 ### :bug: Fixes
