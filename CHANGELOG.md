@@ -1,3 +1,20 @@
+## [1.1.4](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.3...v1.1.4) (2026-08-12)
+
+### :bug: Fixes
+
+* **deps:** require the Symfony components the bundle class is built on ([eab52e4](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/eab52e4a5b2f62b915bfd8ff67e8203ccd31e0ba)), closes [sylius_shop.base#javascripts](https://git.ole-hartwig.eu/ai-ready-platform/sylius_shop.base/issues/javascripts)
+* **deps:** update dependency sylius/sylius to ^2.0.18 [security] ([86ffe4c](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/86ffe4c01163410235823f56dcc6476256968c8b))
+
+### :repeat: Continuous Integrations
+
+* follow the composed pipeline on [@1](https://git.ole-hartwig.eu/1) instead of an exact pin ([2b06aba](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/2b06aba22885a596101f1ecd0c060e8a6c8835b6))
+
+### :repeat: Chores
+
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.36.10 ([233a532](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/233a532fe6a6e6d2fa7e576c523c2d981d2f86cb))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.36.6 ([6be70fe](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/6be70fee25cfa95d45234d86a22afa1427fd2771))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v1.36.8 ([5d3d70e](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/5d3d70e5185c2befb77ff891564dd180b81a8216))
+
 ## [1.1.3](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.2...v1.1.3) (2026-08-04)
 
 ### :repeat: Chores
