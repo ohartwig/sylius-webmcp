@@ -1,3 +1,9 @@
+## [1.1.6](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.5...v1.1.6) (2026-08-13)
+
+### :bug: Fixes
+
+* **deps:** update dependency sylius/sylius to ^2.2.8 ([e1030b1](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/e1030b14287d810674dd0720545856a842898b9c))
+
 ## [1.1.5](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.4...v1.1.5) (2026-08-12)
 
 ### :bug: Fixes
