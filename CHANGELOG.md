@@ -1,3 +1,9 @@
+## [1.1.16](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.15...v1.1.16) (2026-09-02)
+
+### :bug: Fixes
+
+* **deps:** update dependency php to >=8.5.10 ([cbab9f1](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/cbab9f1a6dc8c99695bdb41093c215748247c581))
+
 ## [1.1.15](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.14...v1.1.15) (2026-09-01)
 
 ### :repeat: Chores
