@@ -14,7 +14,7 @@
         "source": "https://github.com/ole-hartwig/sylius-webmcp"
     },
     "require": {
-        "php": ">=8.5.9",
+        "php": ">=8.5.10",
         "sylius/sylius": "^2.2.8",
         "symfony/config": "^6.4 || ^7.4",
         "symfony/dependency-injection": "^6.4 || ^7.4",
