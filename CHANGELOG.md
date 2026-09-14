@@ -1,3 +1,9 @@
+## [1.1.21](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.20...v1.1.21) (2026-09-14)
+
+### :bug: Fixes
+
+* **docs:** Markdown-Hygiene fuer lint:markdown ([a476dc9](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/a476dc9f199b21fb3fd147d87ea5abba0208b9f5))
+
 ## [1.1.20](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.19...v1.1.20) (2026-09-13)
 
 ### :repeat: Continuous Integrations
