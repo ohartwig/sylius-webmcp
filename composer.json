@@ -28,8 +28,8 @@
     },
     "require-dev": {
         "moselwal/dev-sylius": "^1.0",
-        "phpstan/phpstan": "^2.2.15",
-        "phpunit/phpunit": "^13.3.4"
+        "phpstan/phpstan": "^2.2.16",
+        "phpunit/phpunit": "^13.3.5"
     },
     "autoload": {
         "psr-4": {
