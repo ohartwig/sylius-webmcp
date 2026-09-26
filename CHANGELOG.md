@@ -1,3 +1,13 @@
+## [1.1.24](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.23...v1.1.24) (2026-09-26)
+
+### :bug: Fixes
+
+* **deps:** update dependency php to >=8.5.11 ([7fe671a](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/7fe671ac19375644398674ad3774a4e6c18c9ecb))
+
+### :repeat: Chores
+
+* **deps:** update composer packages ([ad486d4](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/ad486d41f586c1b2c502d7e9a2c26e75bc1580ff))
+
 ## [1.1.23](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.22...v1.1.23) (2026-09-24)
 
 ### :repeat: Chores
