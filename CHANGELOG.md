@@ -1,3 +1,14 @@
+## [1.1.26](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.25...v1.1.26) (2026-09-29)
+
+### :repeat: Continuous Integrations
+
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v2.21.10 ([fe05d5a](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/fe05d5a5efaea1cf97f68b195d2bebc0116a783a))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v2.21.9 ([d652954](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/d6529542b3ebecb6c9bacc27949ed1df0f20a911))
+
+### :repeat: Chores
+
+* **repo-templates:** sync ([a7019ec](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/a7019ec27c05f5a848c8bc0195cdb5767961c72c))
+
 ## [1.1.25](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.24...v1.1.25) (2026-09-28)
 
 ### :memo: Documentation
