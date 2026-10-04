@@ -1,3 +1,9 @@
+## [1.1.30](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.29...v1.1.30) (2026-10-04)
+
+### :bug: Fixes
+
+* **deps:** accept Sylius 2.2.9 again ([a429f53](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/a429f53e594011588adccc59ed36246efc45aac8))
+
 ## [1.1.29](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.28...v1.1.29) (2026-10-03)
 
 ### :repeat: Continuous Integrations
