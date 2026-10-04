@@ -14,6 +14,7 @@ path = [
     "CHANGELOG.md",
     "CLAUDE.md",
     "composer.json",
+    "renovate.json",
     "SECURITY.md",
 ]
 precedence = "aggregate"
