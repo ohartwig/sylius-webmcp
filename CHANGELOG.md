@@ -1,3 +1,9 @@
+## [1.1.32](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.31...v1.1.32) (2026-10-05)
+
+### :repeat: Chores
+
+* **deps:** update dependency phpstan/phpstan to ^2.2.17 ([adfee1a](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/adfee1acbaed07ddef3bf37896b8f16579f65344))
+
 ## [1.1.31](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.30...v1.1.31) (2026-10-04)
 
 ### :repeat: Chores
