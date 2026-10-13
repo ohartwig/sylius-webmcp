@@ -1,7 +1,7 @@
 version = 1
 SPDX-PackageName = "koh/sylius-webmcp"
 SPDX-PackageSupplier = "Kai Ole Hartwig <mail@ole-hartwig.eu>"
-SPDX-PackageDownloadLocation = "https://github.com/ole-hartwig/sylius-webmcp"
+SPDX-PackageDownloadLocation = "https://github.com/ohartwig/sylius-webmcp"
 
 # Config, metadata and repo-template files. They carry no comment syntax that
 # survives their own tooling (composer.json, JSON-like configs) or are copied
@@ -16,6 +16,10 @@ path = [
     "composer.json",
     "renovate.json",
     "SECURITY.md",
+    ".mise.toml",
+    ".gitsigners.d/**",
+    "phpstan.neon",
+    "lefthook.yml",
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Kai Ole Hartwig"

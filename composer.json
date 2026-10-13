@@ -1,6 +1,6 @@
 {
     "name": "koh/sylius-webmcp",
-    "description": "WebMCP for the Sylius storefront \u2014 MCP tools embedded in storefront web pages.",
+    "description": "WebMCP for the Sylius storefront — MCP tools embedded in storefront web pages.",
     "type": "sylius-bundle",
     "license": "MIT",
     "authors": [
@@ -10,8 +10,9 @@
         }
     ],
     "support": {
-        "issues": "https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/-/issues",
-        "source": "https://github.com/ole-hartwig/sylius-webmcp"
+        "issues": "https://github.com/ohartwig/sylius-webmcp/issues",
+        "source": "https://github.com/ohartwig/sylius-webmcp",
+        "security": "https://github.com/ohartwig/sylius-webmcp/blob/main/SECURITY.md"
     },
     "require": {
         "php": ">=8.5.11",
