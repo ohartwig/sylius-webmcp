@@ -16,6 +16,10 @@ path = [
     "composer.json",
     "renovate.json",
     "SECURITY.md",
+    ".mise.toml",
+    ".gitsigners.d/**",
+    "phpstan.neon",
+    "lefthook.yml",
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Kai Ole Hartwig"
