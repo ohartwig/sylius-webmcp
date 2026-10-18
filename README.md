@@ -47,14 +47,9 @@ return [
 ];
 ```
 
-Load the bundle's Twig hook, which renders the script at the end of the shop's
-base template:
-
-```yaml
-# config/packages/koh_webmcp.yaml
-imports:
-    - { resource: '@KohSyliusWebmcpBundle/config/sylius_twig_hooks.yaml' }
-```
+The bundle registers its Twig hook itself: the script renders at the end of the
+shop's base template (`sylius_shop.base#javascripts`) as soon as the bundle is
+enabled.
 
 Install the script into `public/bundles/` and clear the cache:
 
