@@ -31,7 +31,7 @@ the newest products.
 
 ## Install
 
-Requires PHP 8.5 and Sylius 2.2 or 2.3 (Twig Hooks).
+Requires PHP 8.3 or later and Sylius 2.2 or 2.3 (Twig Hooks).
 
 ```bash
 composer require koh/sylius-webmcp koh/sylius-acp
