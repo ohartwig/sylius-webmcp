@@ -1,3 +1,17 @@
+## [1.1.42](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.41...v1.1.42) (2026-10-18)
+
+### :bug: Fixes
+
+* **bundle:** register the storefront hook without an import ([369eac2](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/369eac2519ab4774c072585ed4de840f16b93de0))
+
+### :white_check_mark: Tests
+
+* **bundle:** cover the extension's load path and package root ([38a342e](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/38a342e3d263243462131c7e626ce9a495980305))
+
+### :repeat: Chores
+
+* **reuse:** licence header for phpunit.xml.dist ([a58429d](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/a58429d14b9d00020b7ba68eee2de51ef3016850))
+
 ## [1.1.41](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.40...v1.1.41) (2026-10-18)
 
 ### :bug: Fixes
