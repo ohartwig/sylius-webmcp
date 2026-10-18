@@ -5,9 +5,9 @@
 # Sylius storefront via Twig Hooks (Sylius 2.x). This renders _webmcp_script.html.twig
 # at the end of the shop base template (after the page scripts).
 #
-# NOTE: verify the hook name against your Sylius version's hookable templates
-# (bin/console debug:twig-hook sylius_shop.base) -- 'sylius_shop.base.javascripts'
-# is the documented JS hook; adjust if your theme overrides it.
+# Prepended by KohSyliusWebmcpBundle::prependExtension(); no import needed. The
+# hook is the one Sylius 2.x's shared/layout/base.html.twig declares in its
+# javascripts block; a theme that drops that block drops the script with it.
 sylius_twig_hooks:
     hooks:
         'sylius_shop.base#javascripts':

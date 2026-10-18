@@ -37,18 +37,36 @@ final class KohSyliusWebmcpBundle extends AbstractBundle
     }
 
     /**
+     * Config for other extensions has to be prepended: by the time loadExtension()
+     * runs, the twig and sylius_twig_hooks extensions may already have read
+     * theirs, and a prependExtensionConfig() from there is silently dropped.
+     * That is how the hook used to depend on the shop importing
+     * config/sylius_twig_hooks.yaml by hand, and the script never rendered
+     * when it did not.
+     */
+    public function prependExtension(ContainerConfigurator $container, ContainerBuilder $builder): void
+    {
+        $container->import('../config/sylius_twig_hooks.yaml');
+
+        // Exposed to the template so the script never has to guess a path. The
+        // bundle's own config is not processed yet; read the raw value, last wins.
+        $apiBase = '/api/agent';
+        foreach ($builder->getExtensionConfig($this->extensionAlias) as $config) {
+            if (isset($config['api_base']) && \is_string($config['api_base'])) {
+                $apiBase = $config['api_base'];
+            }
+        }
+        $builder->prependExtensionConfig('twig', [
+            'globals' => ['koh_webmcp_api_base' => $apiBase],
+        ]);
+    }
+
+    /**
      * @param array<mixed> $config
      */
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
-        $apiBase = (string) ($config['api_base'] ?? '/api/agent');
-
-        $builder->setParameter('koh_webmcp.api_base', $apiBase);
-
-        // Exposed to the template so the script never has to guess a path.
-        $builder->prependExtensionConfig('twig', [
-            'globals' => ['koh_webmcp_api_base' => $apiBase],
-        ]);
+        $builder->setParameter('koh_webmcp.api_base', (string) ($config['api_base'] ?? '/api/agent'));
 
         $container->import('../config/services.php');
     }
