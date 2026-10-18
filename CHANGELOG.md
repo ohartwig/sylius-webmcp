@@ -1,3 +1,11 @@
+## [1.1.41](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.40...v1.1.41) (2026-10-18)
+
+### :bug: Fixes
+
+* admit PHP 8.3 and test the floor on it ([b57adc2](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/b57adc2d804d755778859aa28071a719fc15a3c6))
+* **docs:** document installation and the tool in the README ([f11edf2](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/f11edf25c888d2b9b61ddccdd0ec5c20e49b3963))
+* **docs:** write the README in English throughout ([0a02039](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/0a02039f1bdc600ff32fa20d34611d3da232c445))
+
 ## [1.1.40](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.39...v1.1.40) (2026-10-17)
 
 ### :repeat: Chores
