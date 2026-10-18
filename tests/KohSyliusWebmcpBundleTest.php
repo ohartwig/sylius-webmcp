@@ -42,6 +42,34 @@ final class KohSyliusWebmcpBundleTest extends TestCase
         self::assertSame('/agents/v2', $twig[0]['globals']['koh_webmcp_api_base'] ?? null);
     }
 
+    public function testTheApiBaseParameterDefaults(): void
+    {
+        self::assertSame('/api/agent', $this->loaded([])->getParameter('koh_webmcp.api_base'));
+    }
+
+    public function testTheApiBaseParameterFollowsTheConfig(): void
+    {
+        self::assertSame('/agents/v2', $this->loaded([['api_base' => '/agents/v2']])->getParameter('koh_webmcp.api_base'));
+    }
+
+    public function testTheBundleLivesAtThePackageRoot(): void
+    {
+        self::assertFileExists((new KohSyliusWebmcpBundle())->getPath().'/config/sylius_twig_hooks.yaml');
+    }
+
+    /** @param list<array<string, mixed>> $configs */
+    private function loaded(array $configs): ContainerBuilder
+    {
+        $builder = new ContainerBuilder();
+        $builder->setParameter('kernel.environment', 'test');
+        $builder->setParameter('kernel.build_dir', sys_get_temp_dir());
+        $extension = (new KohSyliusWebmcpBundle())->getContainerExtension();
+        self::assertNotNull($extension);
+        $extension->load($configs, $builder);
+
+        return $builder;
+    }
+
     /** @param list<array<string, mixed>> $configs */
     private function prepended(array $configs): ContainerBuilder
     {
