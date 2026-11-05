@@ -25,9 +25,11 @@ catalogue text is data for the agent, not instructions. Nothing changes the cart
 Without WebMCP in the browser, the script does nothing.
 
 The tool needs an agent API that serves `{api_base}/feed`. Install
-[`koh/sylius-acp`](https://github.com/ohartwig/sylius-acp), which serves
-`/api/agent/feed`. Its feed does not filter by `q` yet; the tool then returns
-the newest products.
+[`koh/sylius-acp`](https://github.com/ohartwig/sylius-acp), which serves the
+catalogue search at `/api/agent/feed`: `q` narrows it to products whose name
+contains the term; without `q` it returns the newest products. Despite the path,
+this endpoint is not an ACP product feed — ACP feeds are published to the agent
+platform, see the sylius-acp README.
 
 ## Install
 
