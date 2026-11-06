@@ -1,3 +1,13 @@
+## [1.1.45](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.44...v1.1.45) (2026-11-06)
+
+### :memo: Documentation
+
+* **readme:** describe /api/agent/feed as catalogue search, not an ACP feed ([dc4728e](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/dc4728e102c07ac7a2f3a1342ed2182b12c1b2c0))
+
+### :repeat: Chores
+
+* **deps:** update dependency phpstan/phpstan to ^2.3.5 ([8283096](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/828309692038112974f684b21853e0ad8acc6afc))
+
 ## [1.1.44](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.43...v1.1.44) (2026-10-30)
 
 ### :repeat: Chores
