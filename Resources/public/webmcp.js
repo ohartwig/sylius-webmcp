@@ -33,9 +33,10 @@
 
   var controller = new AbortController();
 
-  ctx.registerTool(
+  var registration = ctx.registerTool(
     {
       name: 'search_products',
+      title: 'Search products',
       description:
         'Search this shop catalogue. Returns SKU-level items with price, currency and availability.',
       inputSchema: {
@@ -46,13 +47,44 @@
         },
         required: ['query']
       },
+      // Nothing is required: a failed search answers with `error` alone.
+      outputSchema: {
+        type: 'object',
+        properties: {
+          items: {
+            type: 'array',
+            items: {
+              type: 'object',
+              properties: {
+                id: { type: 'string', description: 'SKU.' },
+                item_group_id: { type: 'string', description: 'Product the SKU belongs to.' },
+                title: { type: 'string' },
+                description: { type: 'string' },
+                link: { type: 'string', format: 'uri' },
+                availability: { type: 'string' },
+                condition: { type: 'string' },
+                price: { type: 'string', description: 'Gross price in minor units (cents).' },
+                price_currency: { type: 'string' },
+                age_restriction: { type: 'integer' }
+              }
+            }
+          },
+          page: { type: 'integer' },
+          limit: { type: 'integer' },
+          count: { type: 'integer' },
+          error: { type: 'string' }
+        }
+      },
       annotations: {
         readOnlyHint: true,
         // The catalogue carries editor-authored text. An agent should treat it
         // as data, not as instructions.
         untrustedContentHint: true
       },
-      execute: async function (input) {
+      // The draft hands execute a second argument carrying an AbortSignal that
+      // fires when the agent cancels the call; browsers from before that
+      // revision pass nothing.
+      execute: async function (input, options) {
         var url =
           base +
           '/feed?limit=' +
@@ -62,7 +94,8 @@
 
         var response = await fetch(url, {
           headers: { Accept: 'application/json' },
-          credentials: 'omit'
+          credentials: 'omit',
+          signal: options && options.signal ? options.signal : undefined
         });
 
         if (!response.ok) {
@@ -74,6 +107,14 @@
     },
     { signal: controller.signal }
   );
+
+  // registerTool returns a promise in the current draft (and undefined in
+  // older browsers). A refused registration — permissions policy, a name
+  // already taken — is the browser's answer, not a page error: swallow it
+  // rather than leave an unhandled rejection in the shop's console.
+  if (registration && typeof registration.catch === 'function') {
+    registration.catch(function () {});
+  }
 
   // Withdraw the tools when the page goes away, so an agent is not left holding
   // a handle to a document that no longer exists.
