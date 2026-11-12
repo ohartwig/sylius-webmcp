@@ -1,3 +1,9 @@
+## [1.1.46](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.45...v1.1.46) (2026-11-12)
+
+### :bug: Fixes
+
+* follow the WebMCP draft for cancelled calls and refused registrations ([57e9925](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/57e992592f79d17f80009348346d7e4d569e4c4b))
+
 ## [1.1.45](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.44...v1.1.45) (2026-11-06)
 
 ### :memo: Documentation
