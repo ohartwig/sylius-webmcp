@@ -24,6 +24,10 @@ The tool is read-only and marked `readOnlyHint` and `untrustedContentHint`:
 catalogue text is data for the agent, not instructions. Nothing changes the cart.
 Without WebMCP in the browser, the script does nothing.
 
+The script follows the WebMCP draft of 2026-11-11: the tool carries a `title`
+and an `outputSchema`, a call the agent cancels aborts the search request, and
+a registration the browser refuses is ignored rather than logged as an error.
+
 The tool needs an agent API that serves `{api_base}/feed`. Install
 [`koh/sylius-acp`](https://github.com/ohartwig/sylius-acp), which serves the
 catalogue search at `/api/agent/feed`: `q` narrows it to products whose name
