@@ -1,3 +1,9 @@
+## [1.1.48](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.47...v1.1.48) (2026-11-17)
+
+### :bug: Fixes
+
+* **composer:** point homepage at the package page ([e88d454](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/commit/e88d454c49d9a0b8a291e7f0f2049536d44a9929))
+
 ## [1.1.47](https://git.ole-hartwig.eu/ai-ready-platform/platform/sylius-webmcp/compare/v1.1.46...v1.1.47) (2026-11-17)
 
 ### :repeat: Chores
